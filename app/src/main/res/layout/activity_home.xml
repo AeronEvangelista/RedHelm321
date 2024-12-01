@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFECEC"
+    tools:context=".Home">
+
+    <!-- Title Block -->
+    <!-- Title Block ImageView -->
+
+    <!-- Scrollable GridLayout for Images -->
+
+
+    <ImageView
+        android:id="@+id/titleblock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toTopOf="@id/grid_scroll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/titleblock" />
+
+    <ScrollView
+        android:id="@+id/grid_scroll"
+        android:layout_width="419dp"
+        android:layout_height="549dp"
+        android:layout_marginBottom="41dp"
+        android:padding="20dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleblock"
+
+        app:layout_constraintVertical_bias="1.0">
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:visibility="visible">
+
+            <!-- Image 1 -->
+
+            <!-- Image 2 -->
+            <ImageView
+                android:id="@+id/policestation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/policestation" />
+
+            <ImageView
+                android:id="@+id/medass"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/medass" />
+
+            <!-- Image 3 -->
+            <ImageView
+                android:id="@+id/firestations"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/firestations" />
+
+            <!-- Image 4 -->
+            <ImageView
+                android:id="@+id/mata"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/mata" />
+
+            <!-- Image 5 -->
+            <ImageView
+                android:id="@+id/ndh"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/ndh" />
+
+            <!-- Image 6 -->
+            <ImageView
+                android:id="@+id/redcross"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/redcross" />
+
+            <!-- Image 7 -->
+            <ImageView
+                android:id="@+id/localgov"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/localgov" />
+
+        </GridLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/bottombar"
+        android:layout_width="0dp"
+        android:layout_height="96dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/bottombar" />
+
+    <!-- BROADCAST MY PHONE -->
+
+
+    <GridLayout
+        android:id="@+id/gridLayout_bottom"
+        android:layout_width="401dp"
+        android:layout_height="77dp"
+        android:layout_marginBottom="16dp"
+        android:columnCount="2"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.902">
+
+        <!-- BMP Image -->
+
+        <!-- Connect Nearby Image -->
+        <ImageView
+            android:id="@+id/bmp"
+            android:layout_width="166dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            app:srcCompat="@drawable/bmp" />
+
+        <ImageView
+            android:id="@+id/connectnearby"
+            android:layout_width="165dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            app:srcCompat="@drawable/connectnearby" />
+
+    </GridLayout>
+
+    <ImageView
+        android:id="@+id/call911"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/call911" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
