@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFECEC"
-    tools:context=".PoliceStations">
+    tools:context=".info_features.PoliceStations">
 
 
     <ImageView

@@ -9,6 +9,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.appdev.redhelm321.chat_room.ConnectNearbyActivity;
+import com.appdev.redhelm321.info_features.FireStations;
+import com.appdev.redhelm321.info_features.LocalGovernment;
+import com.appdev.redhelm321.info_features.MedicalAssistance;
+import com.appdev.redhelm321.info_features.MotorAndTrafficAssistance;
+import com.appdev.redhelm321.info_features.NationalDisasterHotlines;
+import com.appdev.redhelm321.info_features.PoliceStations;
+import com.appdev.redhelm321.info_features.RedCross;
+
 public class Home extends AppCompatActivity {
 
     @Override
@@ -64,7 +73,7 @@ public class Home extends AppCompatActivity {
         });
 
         findViewById(R.id.connectnearby).setOnClickListener(v -> {
-            Intent intent = new Intent(Home.this, ConnectNearby.class);
+            Intent intent = new Intent(Home.this, ConnectNearbyActivity.class);
             startActivity(intent);
         });
 

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MedicalAssistance">
+    tools:context=".info_features.MedicalAssistance">
 
     <ImageView
         android:id="@+id/imageView3"

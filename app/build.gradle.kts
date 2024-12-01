@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "com.appdev.redhelm321"
-        minSdk = 24
+        minSdk = 22
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
