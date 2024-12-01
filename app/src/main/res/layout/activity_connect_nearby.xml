@@ -23,7 +23,8 @@
             android:background="#ffffff"
             android:layout_margin="30dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_weight="1">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -44,21 +45,39 @@
                     android:id="@+id/ll_messagingInterface"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    >
 
                     <ListView
                         android:id="@+id/lv_discoveredDeviceList"
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"/>
-
-                    <Button
-                        android:id="@+id/btn_scanDevices"
-                        android:layout_marginTop="15dp"
-                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Scan"/>
+                        android:layout_weight="1"/>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <Button
+                            android:id="@+id/btn_scanDevices"
+                            android:layout_marginTop="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Scan"/>
+
+                        <Button
+                            android:id="@+id/btn_group"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="15dp"
+                            android:text="Group" />
+
+                    </LinearLayout>
                 </LinearLayout>
 
             </LinearLayout>
@@ -66,7 +85,6 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:visibility="gone"
             android:id="@+id/cv_messagingInterface"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -74,6 +92,7 @@
             android:background="#ffffff"
             android:orientation="vertical"
             app:cardCornerRadius="25dp"
+            android:layout_weight="2.5"
             app:contentPadding="30dp">
 
             <LinearLayout
@@ -99,7 +118,8 @@
                     <ListView
                         android:id="@+id/lv_messageList"
                         android:layout_width="match_parent"
-                        android:layout_height="350dp" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"

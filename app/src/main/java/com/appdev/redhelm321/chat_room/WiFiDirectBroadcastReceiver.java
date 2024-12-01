@@ -15,6 +15,8 @@ public class WiFiDirectBroadcastReceiver extends BroadcastReceiver {
     WifiP2pManager.Channel wifiP2pChannel;
     MainActivity context;
 
+    int prevState = -1;
+
     public WiFiDirectBroadcastReceiver(WifiP2pManager wifiP2pManager, WifiP2pManager.Channel wifiP2pChannel, MainActivity context) {
         this.wifiP2pManager = wifiP2pManager;
         this.wifiP2pChannel = wifiP2pChannel;
@@ -34,19 +36,13 @@ public class WiFiDirectBroadcastReceiver extends BroadcastReceiver {
         else if(WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION.equals(action)) {
             wifiP2pConnectionChangedEvent(intent);
         }
-        else if(WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION.equals(action)) {
-            wifiP2pThisDeviceChangedEvent(intent);
-        }
     }
 
     private void wifiP2pStateChangeEvent(Intent intent) {
         int state = intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1);
-
-        if(state == WifiP2pManager.WIFI_P2P_STATE_ENABLED) {
-            Toast.makeText(context, "WiFi is ON", Toast.LENGTH_SHORT).show();
-        }
-        else {
-            Toast.makeText(context, "WiFi is OFF", Toast.LENGTH_SHORT).show();
+        if(state != WifiP2pManager.WIFI_P2P_STATE_ENABLED) {
+            context.startActivity(new Intent(android.provider.Settings.ACTION_WIFI_SETTINGS));
+            Toast.makeText(context, "Please enable Wifi", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -61,23 +57,10 @@ public class WiFiDirectBroadcastReceiver extends BroadcastReceiver {
     }
 
     private void wifiP2pConnectionChangedEvent(Intent intent) {
-        if (wifiP2pManager == null) return;
-
-        NetworkInfo netInfo = intent.getParcelableExtra(WifiP2pManager.EXTRA_NETWORK_INFO);
-
-        if (netInfo.isConnected()) {
-            wifiP2pManager.requestConnectionInfo(
-                    wifiP2pChannel,
-                    WIFI_P2P_SharedData.getConnectionInfoListener()
-            );
-        }
-        else {
-            Toast.makeText(context, "Disconnected", Toast.LENGTH_SHORT).show();
-        }
-
+        wifiP2pManager.requestConnectionInfo(
+                wifiP2pChannel,
+                WIFI_P2P_SharedData.getConnectionInfoListener()
+        );
     }
 
-
-    private void wifiP2pThisDeviceChangedEvent(Intent intent) {
-    }
 }
