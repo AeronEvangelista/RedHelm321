@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 public class Client extends Thread {
 
+    String displayName;
     String serverIP;
     Socket clientSocket;
 
@@ -31,12 +32,13 @@ public class Client extends Thread {
     ArrayList<String> messages;
 
 
-    public Client(AppCompatActivity sourceActivity, String serverIP, ListView lvMessageList, ArrayList<String> messages) {
+    public Client(AppCompatActivity sourceActivity, String serverIP, ListView lvMessageList, ArrayList<String> messages, String displayName) {
         this.serverIP = serverIP;
         this.handler = new Handler();
         this.lvMessageList = lvMessageList;
         this.messages = messages;
         this.sourceActivity = sourceActivity;
+        this.displayName = displayName;
     }
 
     private void receiveMessage(String message) {
@@ -73,7 +75,7 @@ public class Client extends Thread {
         new Thread(() -> {
             try {
                 if (dos != null) {
-                    dos.writeUTF(message);
+                    dos.writeUTF(displayName + ": " + message);
                     dos.flush();
                 }
             } catch (IOException e) {

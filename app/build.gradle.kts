@@ -42,6 +42,8 @@ dependencies {
     implementation(libs.firebase.database)
     implementation(libs.googleid)
     implementation(libs.play.services.auth)
+    implementation(libs.annotations)
+    implementation(libs.glide)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

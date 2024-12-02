@@ -2,13 +2,13 @@ package com.appdev.redhelm321;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.net.wifi.WifiManager;
 import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -16,7 +16,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ImageButton;
-import android.content.Intent;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -59,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
     WifiP2pManager wifiP2pManager;
     WifiP2pManager.Channel wifiP2pChannel;
     private DatabaseReference usersRef;
+    private DatabaseReference FBDB_profilesRef;
     private SharedPreferences loginPrefs;
     private SharedPreferences.Editor loginPrefsEditor;
     private ActivityResultLauncher<Intent> activityResultLauncher;
@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout loginLayout;  // Login layout
     ImageButton btn_signIn;  // Sign In button
     ImageButton btn_signInGoogle;
+    ImageButton btn_signUp;
     EditText et_email;
     EditText et_password;
 
@@ -91,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
 
         InitializeComponent();
         handleUserLoggedIn();
@@ -136,6 +139,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        handleUserLoggedIn();
+    }
+
     private void InitializeComponent() {
         wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         WIFI_P2P_SharedData.setWifiManager(wifiManager);
@@ -173,6 +182,7 @@ public class MainActivity extends AppCompatActivity {
         firebaseAuthUtils = new FirebaseAuthUtils(mAuth);
         firebaseDatabase = FirebaseDatabase.getInstance();
         usersRef = firebaseDatabase.getReference("users");
+        FBDB_profilesRef = firebaseDatabase.getReference("profiles");
         loginPrefs = getSharedPreferences("LogInPrefs", MODE_PRIVATE);
         loginPrefsEditor = loginPrefs.edit();
 
@@ -222,6 +232,8 @@ public class MainActivity extends AppCompatActivity {
         Intent openGoogleSignIn = googleSignInClient.getSignInIntent();
         activityResultLauncher.launch(openGoogleSignIn);
     }
+
+
 
     private void handleSigningInWithGoogle(Intent data) {
         Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);

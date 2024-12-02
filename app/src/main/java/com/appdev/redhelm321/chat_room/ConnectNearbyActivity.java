@@ -37,7 +37,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.appdev.redhelm321.MainActivity;
 import com.appdev.redhelm321.R;
+import com.appdev.redhelm321.utils.FirebaseAuthUtils;
 import com.appdev.redhelm321.utils.PermissionManager;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -79,6 +83,11 @@ public class ConnectNearbyActivity extends AppCompatActivity {
     Server serverClass;
     Client clientClass;
 
+    private FirebaseAuth mAuth;
+    private FirebaseAuthUtils firebaseAuthUtils;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference FBDB_profilesRef;
+
     boolean isHost;
 
     static final int MESSAGE_READ = 1;
@@ -106,6 +115,11 @@ public class ConnectNearbyActivity extends AppCompatActivity {
 
     private void InitializeComponents() {
         permissionManager = new PermissionManager(this);
+
+        mAuth = FirebaseAuth.getInstance();
+        firebaseAuthUtils = new FirebaseAuthUtils(mAuth);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        FBDB_profilesRef = firebaseDatabase.getReference("profiles");
 
         peerListListener = new WifiP2pManager.PeerListListener() {
             @Override
@@ -143,7 +157,8 @@ public class ConnectNearbyActivity extends AppCompatActivity {
                             ConnectNearbyActivity.this,
                             groupOwnerAddress.getHostAddress(),
                             lv_messageList,
-                            messages);
+                            messages,
+                            mAuth.getCurrentUser().getDisplayName());
                     clientClass.start();
                 }
             }
@@ -273,8 +288,7 @@ public class ConnectNearbyActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if(isHost) {
-
-                    serverClass.broadcastMessage("[H]"+ NICKNAME + ": " + message);
+                    serverClass.broadcastMessage("[H]"+ mAuth.getCurrentUser().getDisplayName() + ": " + message);
                 }
                 else {
                     clientClass.sendMessage(message);

@@ -115,6 +115,7 @@ public class Server extends Thread {
 
         @Override
         public void run() {
+
             try {
                 inputStream = new DataInputStream(clientSocket.getInputStream());
                 outputStream = new DataOutputStream(clientSocket.getOutputStream());
@@ -123,7 +124,7 @@ public class Server extends Thread {
 
                 String inMessage;
                 while ((inMessage = inputStream.readUTF()) != null) {
-                    String finalInMessage = clientSocket.getInetAddress() + ": " +  inMessage;
+                    String finalInMessage = inMessage;
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
