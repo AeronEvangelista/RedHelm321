@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView rhLogo2;  // Second logo to animate
     LinearLayout loginLayout;  // Login layout
     ImageButton btn_signIn;  // Sign In button
+    ImageButton btn_signInGoogle;
     EditText et_email;
     EditText et_password;
 
@@ -156,6 +157,7 @@ public class MainActivity extends AppCompatActivity {
         rhLogo2 = findViewById(R.id.rhLogo2);  // Second logo to animate
         loginLayout = findViewById(R.id.login_layout);  // Login layout
         btn_signIn = findViewById(R.id.btn_signIn);  // Sign In button
+        btn_signInGoogle = findViewById(R.id.btn_signInGoogle);
         et_email = findViewById(R.id.et_email);
         et_password = findViewById(R.id.et_password);
 
@@ -207,6 +209,17 @@ public class MainActivity extends AppCompatActivity {
                 btn_signIn_onClick();
             }
         });
+        btn_signInGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btn_signInGoogle_onClick();
+            }
+        });
+    }
+
+    private void btn_signInGoogle_onClick() {
+        Intent openGoogleSignIn = googleSignInClient.getSignInIntent();
+        activityResultLauncher.launch(openGoogleSignIn);
     }
 
     private void handleSigningInWithGoogle(Intent data) {
@@ -229,9 +242,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Toast.makeText(MainActivity.this, "Successfully signed in with Google!", Toast.LENGTH_SHORT).show();
-                        finish();
-
                         FirebaseUser user = mAuth.getCurrentUser();
+
+                        openHomeScreen();
+
 
                         if (user != null) {
                             String userId = user.getUid();
@@ -255,13 +269,12 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
+
         catch (Exception e) {
 //            Log.e(TAG, e.toString());
             Toast.makeText(this, "An error happened while getting google account!", Toast.LENGTH_SHORT).show();
         }
 
-
-//        pb_login.setVisibility(View.INVISIBLE);
     }
 
     private void handleUserLoggedIn() {
@@ -274,8 +287,13 @@ public class MainActivity extends AppCompatActivity {
                             Toast.LENGTH_LONG
                     )
                     .show();
-            finish();
+            openHomeScreen();
         }
+    }
+
+    private void openHomeScreen() {
+        Intent openHomeScreen = new Intent(MainActivity.this, Home.class);
+        startActivity(openHomeScreen);
     }
 
     private void btn_signIn_onClick() {
@@ -325,8 +343,7 @@ public class MainActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
 //                            pb_login.setVisibility(View.INVISIBLE);
 //                            resetFailedLoginCounter();
-                            Toast.makeText(MainActivity.this, "Welcome!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(MainActivity.this, Home.class));
+                            openHomeScreen();
                         } else {
                             // If sign in fails, display a message to the user.
 //                            Log.w(TAG, "signInWithEmail:failure", task.getException());

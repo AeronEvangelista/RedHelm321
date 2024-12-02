@@ -93,7 +93,7 @@
 
         <!-- Log In Button (Transparent Background) -->
         <ImageButton
-            android:id="@+id/btn_signUp"
+            android:id="@+id/btn_signInGoogle"
             android:layout_width="match_parent"
             android:layout_height="67dp"
             android:background="@android:color/transparent"
