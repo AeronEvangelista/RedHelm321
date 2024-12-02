@@ -15,9 +15,11 @@ public class WiFiDirectBroadcastReceiver extends BroadcastReceiver {
     WifiP2pManager.Channel wifiP2pChannel;
     MainActivity context;
 
-    int prevState = -1;
-
-    public WiFiDirectBroadcastReceiver(WifiP2pManager wifiP2pManager, WifiP2pManager.Channel wifiP2pChannel, MainActivity context) {
+    public WiFiDirectBroadcastReceiver(
+            WifiP2pManager wifiP2pManager,
+            WifiP2pManager.Channel wifiP2pChannel,
+            MainActivity context)
+    {
         this.wifiP2pManager = wifiP2pManager;
         this.wifiP2pChannel = wifiP2pChannel;
         this.context = context;

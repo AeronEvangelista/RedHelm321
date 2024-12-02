@@ -78,12 +78,12 @@ public class ConnectNearbyActivity extends AppCompatActivity {
     PermissionManager permissionManager;
     Server serverClass;
     Client clientClass;
-    Socket socket;
 
     boolean isHost;
 
     static final int MESSAGE_READ = 1;
     private String nickname;
+    private String NICKNAME;
 
 
     @Override
@@ -119,18 +119,16 @@ public class ConnectNearbyActivity extends AppCompatActivity {
         connectionInfoListener = new WifiP2pManager.ConnectionInfoListener() {
             @Override
             public void onConnectionInfoAvailable(WifiP2pInfo wifiP2pInfo) {
-//                cv_discoverInterface.setVisibility(View.GONE);
-//                cv_messagingInterface.setVisibility(View.VISIBLE);
                 final InetAddress groupOwnerAddress = wifiP2pInfo.groupOwnerAddress;
 
                 if (wifiP2pInfo.groupFormed && wifiP2pInfo.isGroupOwner) {
                     Toast.makeText(ConnectNearbyActivity.this, "A server has made connection2P", Toast.LENGTH_SHORT).show();
 
                     tv_connectionStatus.setText("HOST");
-
                     isHost = true;
 
                     if(serverClass == null) {
+                        NICKNAME = wifiP2pInfo.groupOwnerAddress.getHostAddress();
                         serverClass = new Server(
                                 ConnectNearbyActivity.this,
                                 lv_messageList,
@@ -151,7 +149,6 @@ public class ConnectNearbyActivity extends AppCompatActivity {
             }
         };
         WIFI_P2P_SharedData.setConnectionInfoListener(connectionInfoListener);
-
 
         discoveredDevices = new ArrayList<>();
         discoveredDevicesNames = new ArrayList<>();
@@ -276,7 +273,8 @@ public class ConnectNearbyActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if(isHost) {
-                    serverClass.broadcastMessage(message);
+
+                    serverClass.broadcastMessage("[H]"+ NICKNAME + ": " + message);
                 }
                 else {
                     clientClass.sendMessage(message);

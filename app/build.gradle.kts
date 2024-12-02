@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -8,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.appdev.redhelm321"
-        minSdk = 22
+        minSdk = 23
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -37,7 +38,29 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.database)
+    implementation(libs.googleid)
+    implementation(libs.play.services.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+//    implementation(libs.appcompat)
+//    implementation(libs.material)
+//    implementation(libs.activity)
+//    implementation(libs.constraintlayout)
+//    implementation(libs.firebase.auth)
+//    implementation(libs.firebase.database)
+//    implementation(libs.gson)
+//    implementation(platform(libs.firebase.bom))
+//    implementation(libs.play.services.auth)
+//    implementation(libs.googleid)
+//    implementation(libs.gridlayout)
+//    implementation(libs.rhino.android)
+//    implementation(libs.glide)
+//    implementation(libs.retrofit)
+//    testImplementation(libs.junit)
+//    androidTestImplementation(libs.ext.junit)
+//    androidTestImplementation(libs.espresso.core)
 }

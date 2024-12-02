@@ -35,7 +35,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/rhlogo" />
+        app:srcCompat="@drawable/rhlogo"/>
 
     <LinearLayout
         android:id="@+id/login_layout"
@@ -51,13 +51,13 @@
 
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="43dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/textbg"
             android:ems="10"
-            android:hint="Username"
+            android:hint="Email"
             android:inputType="text"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
@@ -66,7 +66,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="43dp"
             android:layout_marginBottom="40dp"
@@ -78,28 +78,28 @@
             android:paddingEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/username" />
+            app:layout_constraintTop_toBottomOf="@id/et_email" />
 
         <!-- Sign In Button (Transparent Background) -->
         <ImageButton
-            android:id="@+id/signIN"
+            android:id="@+id/btn_signIn"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:background="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/password"
+            app:layout_constraintTop_toBottomOf="@id/et_password"
             app:srcCompat="@drawable/signin" />
 
         <!-- Log In Button (Transparent Background) -->
         <ImageButton
-            android:id="@+id/logIN"
+            android:id="@+id/btn_signUp"
             android:layout_width="match_parent"
             android:layout_height="67dp"
             android:background="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/signIN"
+            app:layout_constraintTop_toBottomOf="@id/btn_signIn"
             app:srcCompat="@drawable/login" />
 
         <TextView
@@ -113,7 +113,7 @@
             android:typeface="sans"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/password" />
+            app:layout_constraintTop_toBottomOf="@id/et_password" />
 
 
     </LinearLayout>
