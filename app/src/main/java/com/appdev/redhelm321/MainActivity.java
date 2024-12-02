@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         InitializeComponent();
+        handleUserLoggedIn();
 
         // Find the views
         ImageView rhLogo = findViewById(R.id.rhLogo);  // First logo
@@ -278,15 +279,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void handleUserLoggedIn() {
-
         if (firebaseAuthUtils.isUserLoggedIn()) {
-
-            Toast.makeText(
-                            MainActivity.this,
-                            FormValidation.WarningMessage.USER_ALREADY_LOGGED_IN_WARNING.getMessage(),
-                            Toast.LENGTH_LONG
-                    )
-                    .show();
             openHomeScreen();
         }
     }
