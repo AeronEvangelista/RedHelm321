@@ -34,7 +34,7 @@ public class Home extends AppCompatActivity {
         });
 
         findViewById(R.id.medass).setOnClickListener(v -> {
-            Intent intent = new Intent(Home.this, MedicalAssistance.class);
+            Intent intent = new Intent(Home.this, Profile.class);
             startActivity(intent);
         });
 
@@ -63,14 +63,5 @@ public class Home extends AppCompatActivity {
             startActivity(intent);
         });
 
-        findViewById(R.id.connectnearby).setOnClickListener(v -> {
-            Intent intent = new Intent(Home.this, ConnectNearby.class);
-            startActivity(intent);
-        });
-
-        findViewById(R.id.bmp).setOnClickListener(v -> {
-            Intent intent = new Intent(Home.this, BroadCastMyPhone.class);
-            startActivity(intent);
-        });
     }
 }

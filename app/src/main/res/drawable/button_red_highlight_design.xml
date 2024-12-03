@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow Layer (Blurred Effect Simulation) -->
+    <item android:left="0dp" android:top="0dp" android:right="1dp" android:bottom="0dp">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <solid android:color="#80BCB3B3" /> <!-- Semi-transparent shadow color -->
+            <corners android:radius="100dp" /> <!-- Rounded corners -->
+        </shape>
+    </item>
+
+    <!-- Button Background Layer -->
+    <item android:left="0dp" android:top="0dp" android:right="4dp" android:bottom="4dp">
+        <shape android:layout_width="match_parent">
+            <solid android:color="#FF0000" /> <!-- Red background color -->
+            <corners android:radius="100dp" /> <!-- Rounded corners -->
+        </shape>
+    </item>
+</layer-list>

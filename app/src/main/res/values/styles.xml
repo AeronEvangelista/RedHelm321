@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Theme, make sure it is used in your app -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="buttonStyle">@style/CustomButtonStyle</item>
+    </style>
+
+    <!-- Custom button style with no background tint -->
+    <style name="CustomButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:backgroundTint">#00000000</item> <!-- Transparent background tint -->
+        <item name="android:background">?android:attr/selectableItemBackground</item> <!-- Custom background -->
+    </style>
+</resources>

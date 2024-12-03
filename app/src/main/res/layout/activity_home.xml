@@ -30,15 +30,13 @@
         android:id="@+id/grid_scroll"
         android:layout_width="419dp"
         android:layout_height="549dp"
-        android:layout_marginBottom="41dp"
+        android:layout_marginTop="56dp"
         android:padding="20dp"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleblock"
 
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/titleblock">
 
         <GridLayout
             android:id="@+id/gridLayout"
@@ -129,42 +127,6 @@
 
     <!-- BROADCAST MY PHONE -->
 
-
-    <GridLayout
-        android:id="@+id/gridLayout_bottom"
-        android:layout_width="401dp"
-        android:layout_height="77dp"
-        android:layout_marginBottom="16dp"
-        android:columnCount="2"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.902">
-
-        <!-- BMP Image -->
-
-        <!-- Connect Nearby Image -->
-        <ImageView
-            android:id="@+id/bmp"
-            android:layout_width="166dp"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            app:srcCompat="@drawable/bmp" />
-
-        <ImageView
-            android:id="@+id/connectnearby"
-            android:layout_width="165dp"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            app:srcCompat="@drawable/connectnearby" />
-
-    </GridLayout>
 
     <ImageView
         android:id="@+id/call911"
