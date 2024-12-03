@@ -10,6 +10,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.appdev.redhelm321.authentication.ProfileActivity;
 import com.appdev.redhelm321.chat_room.ConnectNearbyActivity;
 import com.appdev.redhelm321.info_features.FireStations;
 import com.appdev.redhelm321.info_features.LocalGovernment;
@@ -65,7 +66,7 @@ public class Home extends AppCompatActivity {
 
     private void setupClickListeners() {
         findViewById(R.id.policestation).setOnClickListener(v -> {
-            Intent intent = new Intent(Home.this, PoliceStations.class);
+            Intent intent = new Intent(Home.this, ProfileActivity.class);
             startActivity(intent);
         });
 

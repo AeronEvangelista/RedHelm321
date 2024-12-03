@@ -14,6 +14,9 @@ googleid = "1.1.1"
 playServicesAuth = "21.2.0"
 annotations = "5.0.0-rc01"
 glide = "5.0.0-rc01"
+firebaseStorage = "21.0.1"
+firebaseFirestore = "25.1.1"
+okhttp = "5.0.0-alpha.14"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -29,6 +32,9 @@ googleid = { group = "com.google.android.libraries.identity.googleid", name = "g
 play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuth" }
 annotations = { group = "com.github.bumptech.glide", name = "annotations", version.ref = "annotations" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
