@@ -10,17 +10,62 @@
 
 
     <ImageView
-        android:id="@+id/titleblock2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="527dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+        android:id="@+id/imageView10"
+        android:layout_width="43dp"
+        android:layout_height="34dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.032"
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="244dp"
+        android:layout_height="80dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.182"
-        app:srcCompat="@drawable/titleblock" />
+        app:layout_constraintVertical_bias="0.091">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="211dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="REDHELM321"
+            android:textColor="#FF0000"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="164dp"
+            android:layout_height="21dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Emergency Hotlines"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/bottombar2"
@@ -31,7 +76,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/bottombar" />
 
-    <ImageView
+    <Button
         android:id="@+id/call"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,132 +84,69 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/call911" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.558"
-        app:srcCompat="@drawable/police_bg" />
+        android:background="@drawable/call911"
+        app:backgroundTint="@null"/>
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="36dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="286dp"
-        android:layout_marginBottom="446dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView8"
-        app:srcCompat="@drawable/back" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
+        android:layout_marginBottom="104dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottombar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/police_bg" />
+
+    <TextView
+        android:id="@+id/t_police"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="122dp"
+        android:text="Police Station"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6" />
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="173dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginBottom="182dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView8"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/box_" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="38dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView9"
-        app:srcCompat="@drawable/box_" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="197dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="88dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-        app:layout_constraintEnd_toEndOf="@+id/imageView9"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="@+id/imageView9"
-        app:srcCompat="@drawable/call" />
-
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="82dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginBottom="27dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-        app:layout_constraintEnd_toEndOf="@+id/imageView9"
-        app:layout_constraintStart_toStartOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="@+id/imageView9"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/location" />
-
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="295dp"
+        android:layout_height="279dp"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="94dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
-        app:layout_constraintEnd_toEndOf="@+id/imageView10"
-        app:layout_constraintStart_toStartOf="@+id/imageView10"
-        app:layout_constraintTop_toTopOf="@+id/imageView10"
-        app:srcCompat="@drawable/location" />
+        android:layout_marginTop="129dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.121"
+        app:srcCompat="@drawable/box_" />
 
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="154dp"
-        android:layout_marginTop="82dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="27dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-        app:layout_constraintEnd_toEndOf="@+id/imageView9"
-        app:layout_constraintStart_toStartOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="@+id/imageView9"
-        app:srcCompat="@drawable/share" />
+    <Button
+        android:id="@+id/call_button"
+        android:layout_width="136dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_design"
+        android:text="CALL"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
 
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="153dp"
-        android:layout_marginTop="94dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
-        app:layout_constraintEnd_toEndOf="@+id/imageView10"
-        app:layout_constraintStart_toStartOf="@+id/imageView10"
-        app:layout_constraintTop_toTopOf="@+id/imageView10"
-        app:srcCompat="@drawable/share" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,29 +14,65 @@
     <!-- Scrollable GridLayout for Images -->
 
 
-    <ImageView
-        android:id="@+id/titleblock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        app:layout_constraintBottom_toTopOf="@id/grid_scroll"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="244dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="15dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/grid_scroll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/titleblock" />
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="211dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="REDHELM321"
+            android:textColor="#FF0000"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="164dp"
+            android:layout_height="21dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Emergency Hotlines"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:id="@+id/grid_scroll"
-        android:layout_width="419dp"
-        android:layout_height="549dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="410dp"
+        android:layout_height="586dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="8dp"
         android:padding="20dp"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toBottomOf="@+id/titleblock">
+        app:layout_constraintBottom_toTopOf="@+id/bottombar"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout">
 
         <GridLayout
             android:id="@+id/gridLayout"
@@ -50,68 +86,112 @@
             <!-- Image 1 -->
 
             <!-- Image 2 -->
-            <ImageView
+            <Button
                 android:id="@+id/policestation"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="165dp"
                 android:layout_row="0"
                 android:layout_column="0"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                app:srcCompat="@drawable/policestation" />
+                android:background="@drawable/policestations"
+                android:gravity="center_horizontal|top"
+                android:paddingTop="110dp"
+                android:text="Police Station"
+                android:textColor="@android:color/black"
+                android:textSize="15dp"
+                android:textStyle="normal"
+                app:backgroundTint="@null" />
 
-            <ImageView
+            <Button
                 android:id="@+id/medass"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="165dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                app:srcCompat="@drawable/medass" />
+                android:background="@drawable/medass"
+                android:gravity="center_horizontal|top"
+                android:paddingTop="110dp"
+                android:text="Medical Assistance"
+                android:textColor="@android:color/black"
+                android:textSize="14dp"
+                android:textStyle="normal"
+                app:backgroundTint="@null" />
 
             <!-- Image 3 -->
-            <ImageView
+            <Button
                 android:id="@+id/firestations"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="165dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                app:srcCompat="@drawable/firestations" />
+                android:background="@drawable/firestations"
+                android:gravity="center_horizontal|top"
+                android:paddingTop="115dp"
+                android:text="Fire Stations"
+                android:textColor="@android:color/black"
+                android:textSize="15dp"
+                app:backgroundTint="@null" />
 
             <!-- Image 4 -->
-            <ImageView
+            <Button
                 android:id="@+id/mata"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                app:srcCompat="@drawable/mata" />
+                android:background="@drawable/mata"
+                android:gravity="center_horizontal|bottom"
+                android:paddingTop="115dp"
+                android:text="Motor and Traffic Assistance"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                app:backgroundTint="@null" />
 
             <!-- Image 5 -->
-            <ImageView
+            <Button
                 android:id="@+id/ndh"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="165dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                app:srcCompat="@drawable/ndh" />
+                android:background="@drawable/ndh"
+                android:gravity="center_horizontal|top"
+                android:paddingTop="115dp"
+                android:text="Natural Disaster Hotlines"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                app:backgroundTint="@null" />
 
             <!-- Image 6 -->
-            <ImageView
+            <Button
                 android:id="@+id/redcross"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="165dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                app:srcCompat="@drawable/redcross" />
+                android:background="@drawable/redcross"
+                android:gravity="center_horizontal|top"
+                android:paddingTop="115dp"
+                android:text="Red Cross"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                app:backgroundTint="@null" />
 
             <!-- Image 7 -->
-            <ImageView
+            <Button
                 android:id="@+id/localgov"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="165dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                app:srcCompat="@drawable/localgov" />
+                android:background="@drawable/localgov"
+                android:gravity="center_horizontal|top"
+                android:paddingTop="115dp"
+                android:text="Local Government"
+                android:textColor="@android:color/black"
+                android:textSize="13sp"
+                app:backgroundTint="@null" />
 
         </GridLayout>
     </ScrollView>

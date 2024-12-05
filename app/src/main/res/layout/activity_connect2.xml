@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".connect2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="244dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.091">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="211dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="REDHELM321"
+            android:textColor="#FF0000"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="164dp"
+            android:layout_height="21dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Connect Nearby"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Custom RippleView -->
+    <com.appdev.redhelm321.RippleView
+        android:id="@+id/rippleView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/connectButton"
+        app:layout_constraintEnd_toEndOf="@+id/connectButton"
+        app:layout_constraintStart_toStartOf="@+id/connectButton"
+        app:layout_constraintTop_toTopOf="@+id/connectButton" />
+
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/connect_bg"
+        android:padding="16dp"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="321dp"
+        android:layout_height="64dp"
+        android:gravity="center_horizontal"
+        android:text="Quickly establish a direct connection with nearby devices in case of emergencies or when regular networks are unavailable. Stay connected when it matters most."
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/connectButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>

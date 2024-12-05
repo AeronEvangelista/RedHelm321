@@ -1,8 +1,6 @@
 package com.appdev.redhelm321;
-
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -39,12 +37,12 @@ public class Home extends AppCompatActivity {
         });
 
         findViewById(R.id.firestations).setOnClickListener(v -> {
-            Intent intent = new Intent(Home.this, FireStations.class);
+            Intent intent = new Intent(Home.this, profile_load.class);
             startActivity(intent);
         });
 
         findViewById(R.id.mata).setOnClickListener(v -> {
-            Intent intent = new Intent(Home.this, MotorAndTrafficAssistance.class);
+            Intent intent = new Intent(Home.this, connect2.class);
             startActivity(intent);
         });
 
